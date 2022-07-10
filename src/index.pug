@@ -12,7 +12,8 @@ html(lang="en")
     link(rel="stylesheet" href="./css/style.sass")
     link(rel="stylesheet" href="./css/custom.scss")
 
-    script(type="module" src="./js/custom.js") 
+    script(type="module" src="./js/custom.js")
+    script(type="module" src="./js/roma.js") 
     title Image Generator
 
   body
@@ -55,7 +56,7 @@ html(lang="en")
             option(value=".png") png
             option(value=".jpg") jpg
             option(value=".jpeg") jpeg
-          a.download-link.btn.btn-secondary(href="#") Download
+          a#download.download-link.btn.btn-secondary(href="#") Download
 
   section.text 
     h1 Random image generator
