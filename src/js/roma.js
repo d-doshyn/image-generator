@@ -1,40 +1,65 @@
-// inputs
-let width = document.querySelector("#width");
-let height = document.querySelector("#height");
-let color = document.querySelector("#color");
-let background = document.querySelector("#background");
-let text = document.querySelector("#text");
-let extention = document.querySelector("#extension");
+// my preloader UwU
+document.body.onload = function () {
+  setTimeout(function () {
+    let preloader = document.querySelector(".preloader");
+    if (!preloader.classList.contains("done")) {
+      preloader.classList.add("done");
+    }
+  }, 1000);
+};
+// total inputs
+let inputs = {
+  width: document.querySelector("#width"),
+  height: document.querySelector("#height"),
+  color: document.querySelector("#color"),
+  background: document.querySelector("#background"),
+  text: document.querySelector("#text"),
+  extention: document.querySelector("#extension"),
+  download: document.querySelector("#download"),
+};
 let download = document.querySelector("#download");
-// image
 let image = document.querySelector("#image");
+// src example
 // https://dummyimage.com/1920x1080/000/fff/.png?text=Damirka+Full+HD
-// https://dummyimage.com/100x500/#77d935/#8f8f8f/.png?text=Damirka+Fulg
-console.log(width);
-console.log(height);
-console.log(color);
-console.log(background);
-console.log(text);
-console.log(extention);
-console.log(download);
+for (let input in inputs) {
+  inputs[input].oninput = function () {
+    image.setAttribute(
+      "src",
+      "https://dummyimage.com/" +
+        inputs.width.value +
+        "x" +
+        inputs.height.value +
+        "/" +
+        inputs.background.value +
+        "/" +
+        inputs.color.value +
+        "/" +
+        inputs.extention.value +
+        "?text=" +
+        inputs.text.value
+    );
+  };
+}
+
+// change value
+color.value.replace(/#/, "");
+
+text.value.replace(/ /, "+");
 download.onclick = function () {
   image.setAttribute(
     "src",
     "https://dummyimage.com/" +
-      width.value +
+      inputs.width.value +
       "x" +
-      height.value +
+      inputs.height.value +
       "/" +
-      background.value +
+      inputs.background.value +
       "/" +
-      color.value +
+      inputs.color.value +
       "/" +
-      extention.value +
+      inputs.extention.value +
       "?text=" +
-      text.value
+      inputs.text.value
   );
 };
-// меняем решетку для цвета
-color.value.replace(/#/, "");
 
-text.value.replace(/ /, "+");
