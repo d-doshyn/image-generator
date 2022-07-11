@@ -12,11 +12,16 @@ html(lang="en")
     link(rel="stylesheet" href="./css/style.sass")
     link(rel="stylesheet" href="./css/custom.scss")
 
-    script(type="module" src="./js/leha-shalun.js") 
     script(type="module" src="./js/custom.js") 
+    //- script(type="module" src="./js/leha-shalun.js") 
+    script(type="module" src="./js/roma.js")
     title Image Generator
 
   body
+    //- preloader
+    .preloader
+      h2.loader-title Please wait #[span.dot(style="--delay:0") .] #[span.dot(style="--delay:1") .] #[span.dot(style="--delay:2") .]
+      .circle-loader
     section.burger 
       i.fa-solid.fa-burger
 
@@ -56,7 +61,8 @@ html(lang="en")
             option(value=".png") png
             option(value=".jpg") jpg
             option(value=".jpeg") jpeg
-          a.download-link.btn.btn-secondary(href="#") Download
+            //- Добавил айди к кнопке. Так нужно 
+          a#download.download-link.btn.btn-secondary(href="#") Download
 
   section.text 
     h1 Random image generator
@@ -65,7 +71,7 @@ html(lang="en")
     .content
       .img-wrapper
         //- картинка
-        img.content-image.generated-image(src="https://dummyimage.com/1000x1000/000/fff/.png?text=Damirka+Full+HD")
+        img#image.content-image.generated-image(src="https://dummyimage.com/1000x1000/000/fff/.png?text=Damirka+Full+HD")
       .content-overlay
       .content-details.fadeIn-bottom
         section.options
@@ -89,7 +95,8 @@ html(lang="en")
     section.about-us
       h3 Random image generator made by 
         a(href="#") EXPAND
-        | team  
+        |  team  
+        //- пробел недописали)
       section.social-media
         .media 
           a(href="") 

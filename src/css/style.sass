@@ -24,6 +24,45 @@ body
 
 img
   max-width: 100%
+.preloader
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100vh
+  background-color: #131313
+  z-index: 2
+  transition: 0.3s all ease-in-out
+  @include center()
+  .loader-title
+    font-size: 2.5rem
+    font-weight: bold
+    margin-bottom: 1rem
+    position: absolute
+    top: 40%
+    left: 50%
+    transform: translate(-50%, -50%)
+  .circle-loader
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    border: 2px solid #fff
+    border-top-color: #131313
+    z-index: 3
+    animation: preloader 1s infinite linear
+    
+.dot
+  animation: 0.5s title-anim linear infinite
+  animation-delay: calc(0.1s * var(--delay))
+
+@keyframes title-anim
+  to
+    visibility: hidden
+    opacity: 0
+
+.done
+  opacity: 0
+  visibility: hidden
 
 .burger
   position: fixed
@@ -201,7 +240,7 @@ input:checked + .slider:before
   &:hover
     background-color: #444
     color: white
-  &:hover i 
+  &:hover i
     color: white
 
 .icon-thanks
@@ -256,7 +295,13 @@ footer
   @include center()
   gap: 10px
   font-size: 60px
-  a 
+  a
     color: white
-    &:hover 
+    &:hover
       color: black
+
+@keyframes preloader
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
