@@ -23,6 +23,9 @@ let image = document.querySelector("#image");
 // https://dummyimage.com/1920x1080/000/fff/.png?text=Damirka+Full+HD
 for (let input in inputs) {
   inputs[input].oninput = function () {
+    // change value
+    inputs.color.value.replace(/#/, "");
+    inputs.text.value.replace(/ /, "+");
     image.setAttribute(
       "src",
       "https://dummyimage.com/" +
@@ -41,10 +44,6 @@ for (let input in inputs) {
   };
 }
 
-// change value
-color.value.replace(/#/, "");
-
-text.value.replace(/ /, "+");
 download.onclick = function () {
   image.setAttribute(
     "src",
@@ -63,3 +62,4 @@ download.onclick = function () {
   );
 };
 
+// change value
