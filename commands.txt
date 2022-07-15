@@ -1,0 +1,4 @@
+git clone - выкачать репозиторий
+npm install - установить библиотеки
+parcel src/index.pug - запустить файл через парсел
+npm run serve - запустить парсел
