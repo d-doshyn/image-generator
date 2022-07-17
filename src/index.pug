@@ -55,7 +55,7 @@ html(lang="en")
             option(value=".png") png
             option(value=".jpg") jpg
             option(value=".jpeg") jpeg
-          a.download-link.btn.btn-secondary(href="#") Download
+          a#download.download-link.btn.btn-secondary(href="#") Download
 
   section.text 
     h1 Random image generator
@@ -64,7 +64,7 @@ html(lang="en")
     .content
       .img-wrapper
         //- картинка
-        img.content-image.generated-image(src="https://dummyimage.com/200x200/000/fff/.png?text=Damirka+Full+HD")
+        img#image.content-image.generated-image(src="https://dummyimage.com/200x200/000/fff/.png?text=Damirka+Full+HD" href="https://dummyimage.com/200x200/000/fff/.png?text=Damirka+Full+HD")
       .content-overlay
       .content-details.fadeIn-bottom
         section.options
@@ -122,6 +122,9 @@ html(lang="en")
                 .text-thanks 
                   h5 Donate
                   p  If you have an opportunity, support our efforts
+
+  script(src="js/daniil.js" type="module") 
+  script(src="js/fileSaver.js")
 
 
 
