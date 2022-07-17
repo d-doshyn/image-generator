@@ -16,11 +16,15 @@ html(lang="en")
  
     script(type="module" src="./js/custom.js")
     script(type="module" src="./js/roma.js")
-    script(type="module"  src="./js/fileSaver.js") 
+    script(type="module" src="./js/fileSaver.js") 
+    //- script(type="module" src="./js/leha-shalun.js") 
+    //- script(type="module" src="./js/fileSaverLehi.js") 
+    //- script(type="module" src="./js/daniil.js") 
+    //- script(type="module" src="./js/nazar.js")
     title Image Generator
 
   body
-    //- preloader
+    preloader
     .preloader
       h2.loader-title Please wait #[span.dot(style="--delay:0") .] #[span.dot(style="--delay:1") .] #[span.dot(style="--delay:2") .]
       .circle-loader
@@ -67,7 +71,7 @@ html(lang="en")
             option(value=".jpg") jpg
             option(value=".jpeg") jpeg
             //- Добавил айди к кнопке. Так нужно 
-          a#download.download-link.btn.btn-secondary(href="#") Download
+          a#download.download-link.btn.btn-secondary(href="#" download) Download
 
   section.text 
     h1 Random image generator
@@ -94,7 +98,7 @@ html(lang="en")
             a(href="#" data-bs-toggle="modal" data-bs-target="#exampleModal").option.download-image
               .icon
                 i.fa-solid.fa-circle-arrow-down
-              h3.op-title Тут что-то есть
+              h3.op-title  Tut nichego net
 
   footer
     section.about-us
