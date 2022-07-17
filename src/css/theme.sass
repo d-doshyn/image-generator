@@ -1,0 +1,74 @@
+.switcher-wrapper
+    width: 80px
+    height: 40px
+    position: absolute
+    top: 40px
+    right: 35px
+
+.switch-theme
+    position: relative
+    display: inline-block
+    width: 80px
+    height: 40px
+
+.switch-theme input
+    opacity: 0
+    width: 0
+    height: 0
+
+.slider-theme
+    position: absolute
+    cursor: pointer
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: #70c8eb
+    -webkit-transition: .4s
+    transition: .4s
+    display: flex
+    justify-content: center
+    align-items: center
+
+.slider-theme:before
+    position: absolute
+    content: ""
+    height: 40px
+    width: 40px
+    transform: translateX(-50%)
+    background-color: white
+    -webkit-transition: .4s
+    transition: .4s
+
+input:checked + .slider-theme
+    background-color: #450057
+
+input:focus + .slider-theme
+    box-shadow: 0 0 1px #444
+
+input:checked + .slider-theme:before
+    transform: translateX(50%)
+
+.slider-theme.round
+    border-radius: 68px
+
+.slider-theme.round:before
+    border-radius: 50%
+    background: #d1c300
+// class body
+.light
+    background: #dbdbdb
+    color: #000
+    .menu
+        background: #fff
+        color: #000
+    .about-us a
+        -webkit-text-stroke: 1px #000000
+    .about-us a:hover
+        color: #000
+    .social-media a
+        color: #4d4d4d
+    .social-media a:hover
+        color: #000000
+    
+        

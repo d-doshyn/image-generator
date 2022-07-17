@@ -17,15 +17,12 @@ let inputs = {
   extention: document.querySelector("#extension"),
   download: document.querySelector("#download"),
 };
-let download = document.querySelector("#download");
+let download = document.querySelector("#download[href='#']");
 let image = document.querySelector("#image");
 // src example
 // https://dummyimage.com/1920x1080/000/fff/.png?text=Damirka+Full+HD
 for (let input in inputs) {
   inputs[input].oninput = function () {
-    // change value
-    inputs.color.value.replace(/#/, "");
-    inputs.text.value.replace(/ /, "+");
     image.setAttribute(
       "src",
       "https://dummyimage.com/" +
@@ -33,33 +30,23 @@ for (let input in inputs) {
         "x" +
         inputs.height.value +
         "/" +
-        inputs.background.value +
+        inputs.background.value.replace(/#/, "") +
         "/" +
-        inputs.color.value +
+        inputs.color.value.replace(/#/, "") +
         "/" +
         inputs.extention.value +
         "?text=" +
-        inputs.text.value
+        inputs.text.value.replace(/ /g, "+")
     );
   };
 }
 
 download.onclick = function () {
-  image.setAttribute(
-    "src",
-    "https://dummyimage.com/" +
-      inputs.width.value +
-      "x" +
-      inputs.height.value +
-      "/" +
-      inputs.background.value +
-      "/" +
-      inputs.color.value +
-      "/" +
-      inputs.extention.value +
-      "?text=" +
-      inputs.text.value
-  );
+  saveAs(image.src, "image_by_ImageGenerator");
 };
+// theme
+let themeCheckbox = document.querySelector("#theme-checkbox");
 
-// change value
+themeCheckbox.onchange = function () {
+  document.body.classList.toggle("light");
+};

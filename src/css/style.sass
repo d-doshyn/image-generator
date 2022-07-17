@@ -21,6 +21,7 @@ body
   color: #fff
   background-color: #444
   padding-top: 120px
+  transition: 0.3s all ease-in-out
 
 img
   max-width: 100%
@@ -50,7 +51,7 @@ img
     border-top-color: #131313
     z-index: 3
     animation: preloader 1s infinite linear
-    
+
 .dot
   animation: 0.5s title-anim linear infinite
   animation-delay: calc(0.1s * var(--delay))
@@ -80,10 +81,10 @@ img
   position: fixed
   left: -300px
   top: 0
-  background-color: #fff
+  background-color: #252525
   border-right: 5px solid #888
   z-index: 1
-  color: #000
+  color: #ffffff
   transition: .5s ease-in-out
   flex-direction: column
   left: -400px
@@ -296,9 +297,9 @@ footer
   gap: 10px
   font-size: 60px
   a
-    color: white
+    color: #a1a1a1
     &:hover
-      color: black
+      color: #fff
 
 @keyframes preloader
   0%
