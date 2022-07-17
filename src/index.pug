@@ -16,14 +16,16 @@ html(lang="en")
     script(type="module" src="./js/fileSaver.js") 
     script(type="module" src="./js/leha-shalun.js") 
     script(type="module" src="./js/fileSaverLehi.js") 
+    //- script(type="module" src="./js/daniil.js") 
     //- script(type="module" src="./js/roma.js")
+    script(type="module" src="./js/nazar.js")
     title Image Generator
 
   body
-    //- preloader
-    //- .preloader
-    //-   h2.loader-title Please wait #[span.dot(style="--delay:0") .] #[span.dot(style="--delay:1") .] #[span.dot(style="--delay:2") .]
-    //-   .circle-loader
+    preloader
+    .preloader
+      h2.loader-title Please wait #[span.dot(style="--delay:0") .] #[span.dot(style="--delay:1") .] #[span.dot(style="--delay:2") .]
+      .circle-loader
     section.burger 
       i.fa-solid.fa-burger
 
@@ -132,6 +134,9 @@ html(lang="en")
                 .text-thanks 
                   h5 Donate
                   p  If you have an opportunity, support our efforts
+
+  script(src="js/daniil.js" type="module") 
+  script(src="js/fileSaver.js")
 
 
 
