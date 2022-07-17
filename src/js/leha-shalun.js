@@ -1,28 +1,29 @@
-let width = document.querySelector('#width');
-let height = document.querySelector('#height');
-let plchImg = document.querySelector('.content-image');
-let imgSize = 0
+let image = document.querySelector('.content-image');
 
-function imgGenerate () {
-    let widthValue = width.value;
-    let heightValue = height.value;
-    imgSize = widthValue + 'x' + heightValue;
-
-    plchImg.src = plchImg.src.replace("1000x1000", imgSize)
-    console.log(plchImg.src);
+let inputs = {
+    width: document.querySelector('#width'),
+    height: document.querySelector('#height'),
+    bg: document.querySelector('#background'),
+    textColor: document.querySelector('#color'),
+    format: document.querySelector('#extension'),
+    text: document.querySelector('#text')
 }
 
-// width.onclick = imgGenerate
-// height.onclick = imgGenerate
-
-width.onkeydown = function (event) {
-    if (event.keyCode == 13) {
-        imgGenerate
-    }
-}
-
-height.onkeydown = function (event) {
-    if (event.keyCode == 13) {
-        imgGenerate
+for (let input in inputs) {
+    inputs[input].oninput = function () {
+        image.setAttribute('src', 
+        'https://dummyimage.com/' +
+        inputs.width.value +
+        'x' +
+        inputs.height.value +
+        '/' +
+        inputs.bg.value.replace(/#/, '') +
+        '/' +
+        inputs.textColor.value.replace(/#/, '') +
+        '/' +
+        inputs.format.value +
+        '?text=' +
+        inputs.text.value.replace(/ /g, '+')
+        )
     }
 }
