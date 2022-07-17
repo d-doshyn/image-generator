@@ -23,3 +23,9 @@ document.body.onload = function () {
 		}
 	}, 1000);
 };
+// theme
+let themeCheckbox = document.querySelector("#theme-checkbox");
+
+themeCheckbox.onchange = function () {
+  document.body.classList.toggle("light");
+};

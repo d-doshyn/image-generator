@@ -17,7 +17,7 @@ let inputs = {
   extention: document.querySelector("#extension"),
   download: document.querySelector("#download"),
 };
-let download = document.querySelector("#download[href='#']");
+let download = document.querySelector("#download");
 let image = document.querySelector("#image");
 // src example
 // https://dummyimage.com/1920x1080/000/fff/.png?text=Damirka+Full+HD
@@ -41,12 +41,7 @@ for (let input in inputs) {
   };
 }
 
-download.onclick = function () {
+download.onclick = saveImg;
+function saveImg() {
   saveAs(image.src, "image_by_ImageGenerator");
-};
-// theme
-let themeCheckbox = document.querySelector("#theme-checkbox");
-
-themeCheckbox.onchange = function () {
-  document.body.classList.toggle("light");
-};
+}
